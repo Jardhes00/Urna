@@ -1,0 +1,152 @@
+/* Cédula — "noite de premiação", pensada primeiro para celular (uso com o polegar). */
+
+.vote-page { display: flex; flex-direction: column; min-height: 100dvh; background: var(--navy-950); }
+.vote-page .app-header { background: transparent; border-bottom: 1px solid var(--line); }
+.vote-page .app-header__inner { max-width: 720px; margin: 0 auto; min-height: 56px; }
+.secure-tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; font-size: var(--fs-xs); font-weight: 600; color: var(--gold-300); background: rgba(233, 185, 73, .1); border: 1px solid rgba(233, 185, 73, .25); white-space: nowrap; }
+.secure-tag svg { width: 14px; height: 14px; }
+
+.vote-main { flex: 1; display: flex; flex-direction: column; width: 100%; max-width: 720px; margin: 0 auto; padding: 0; }
+#app { flex: 1; display: flex; flex-direction: column; overflow-x: clip; } /* o deslize entre etapas não gera rolagem lateral */
+
+/* Celular: a cédula ocupa a tela inteira, sem moldura, sobre o fundo escuro. */
+.vote-card {
+  flex: 1; display: flex; flex-direction: column; gap: var(--s-5);
+  padding: var(--s-5) var(--s-4) 0;
+}
+.vote-card:not(.vote-card--step) { padding-bottom: var(--s-6); }
+.vote-card .empty-state { padding: var(--s-10) 0; margin: auto 0; }
+
+/* Telas maiores: cartão centralizado. */
+@media (min-width: 600px) {
+  .vote-main { padding: var(--s-8) var(--s-6) var(--s-10); }
+  .vote-card {
+    flex: none; padding: var(--s-8);
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow);
+  }
+  .vote-card.vote-card--step { padding-bottom: var(--s-8); }
+}
+
+.eyebrow { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-300); }
+.vote-title { font-size: clamp(1.75rem, 1.35rem + 2vw, 2.5rem); line-height: 1.12; overflow-wrap: anywhere; }
+.vote-lead { color: var(--muted); font-size: var(--fs-md); }
+@media (min-width: 600px) { .vote-lead { font-size: var(--fs-lg); } }
+.eyebrow + .vote-title { margin-top: calc(var(--s-3) * -1); }
+.vote-title + .vote-lead { margin-top: calc(var(--s-3) * -1); }
+
+/* ---------- Abertura ---------- */
+.vote-card--intro { text-align: center; align-items: center; }
+.vote-card--intro > .vote-title {
+  font-size: clamp(2.5rem, 1.7rem + 5vw, 3.75rem); padding-bottom: .08em;
+  background: linear-gradient(180deg, #FFF3CF 10%, #F4D484 50%, #DDAC3C 95%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.vote-card--intro .vote-lead { max-width: 42ch; }
+.emblem {
+  position: relative; width: 104px; height: 104px; border-radius: 50%; display: grid; place-items: center; margin-top: var(--s-5);
+  color: var(--navy-950); background: var(--gold-gradient);
+  box-shadow: 0 0 0 7px rgba(233, 185, 73, .14), 0 0 0 16px rgba(233, 185, 73, .07), 0 22px 44px -16px rgba(233, 185, 73, .75);
+}
+.emblem svg { width: 52px; height: 52px; stroke-width: 1.5; }
+.facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s-2); font-size: var(--fs-sm); font-weight: 500; }
+.facts li { display: inline-flex; align-items: center; gap: var(--s-2); padding: 6px 12px; border-radius: 999px; background: var(--info-bg); border: 1px solid var(--line); }
+.facts svg { width: 16px; height: 16px; color: var(--gold-300); }
+
+.privacy-note { display: flex; gap: var(--s-3); padding: var(--s-4); border-radius: var(--radius); background: var(--info-bg); border: 1px solid var(--line); font-size: var(--fs-sm); color: var(--muted); text-align: left; }
+.privacy-note strong { color: var(--ink); }
+.privacy-note svg { width: 22px; height: 22px; flex: none; color: var(--gold-300); }
+.vote-card--intro .btn--lg { margin-top: auto; }
+@media (min-width: 600px) { .vote-card--intro .btn--lg { margin-top: 0; } }
+
+/* ---------- Progresso em segmentos ---------- */
+.step-progress { display: grid; gap: 10px; }
+.step-progress__label { display: flex; justify-content: space-between; gap: var(--s-3); font-size: var(--fs-sm); font-weight: 650; color: var(--gold-300); }
+.step-progress__label .muted { font-weight: 500; }
+.step-segments { display: flex; gap: 4px; }
+.step-segments__item { flex: 1; height: 5px; border-radius: 999px; background: var(--track); transition: background-color .25s; }
+.step-segments__item.is-done { background: var(--gold-500); }
+.step-segments__item.is-current { background: var(--gold-300); box-shadow: 0 0 10px rgba(244, 212, 132, .75); }
+
+/* ---------- Etapa ---------- */
+.step-body { display: flex; flex-direction: column; gap: var(--s-3); animation: step-in .26s var(--ease); }
+@keyframes step-in { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
+.step-hint { font-size: var(--fs-sm); color: var(--muted); margin-bottom: var(--s-1); }
+.step-body .quip { margin: var(--s-2) 0 var(--s-4); }
+.empty-state .quip { margin-top: var(--s-4); }
+
+.options { border: 0; padding: 0; margin: 0; min-width: 0; }
+.options .choice-grid { gap: 10px; }
+.options .choice__body {
+  min-height: 64px; align-items: center; padding: var(--s-3) var(--s-4);
+  font-size: 1.0625rem; -webkit-tap-highlight-color: transparent;
+  justify-content: space-between; flex-direction: row-reverse; /* marcador à direita: fica sob o polegar */
+}
+.options .choice__text { flex: 1; min-width: 0; }
+.options .choice__radio { margin-top: 0; width: 26px; height: 26px; }
+.options .choice:active .choice__body { transform: scale(.985); }
+.options .choice input:checked + .choice__body { box-shadow: 0 0 0 1px var(--selected-border), 0 10px 26px -14px rgba(233, 185, 73, .7); }
+.options .choice input:checked + .choice__body .choice__title { color: var(--gold-300); }
+.options__blank { margin-top: var(--s-3); padding-top: var(--s-3); border-top: 1px dashed var(--line-strong); }
+.choice--blank .choice__body { border-style: dashed; background: transparent; }
+.choice--blank .choice__title { color: var(--muted); }
+
+/* Alternativas com imagem: [imagem][nome ...][marcador] */
+.choice--media .choice__body { gap: 14px; padding: 10px 16px 10px 10px; flex-direction: row; }
+.choice--media .choice__radio { order: 3; margin-left: auto; }
+.choice--media .choice__text { order: 2; min-width: 0; }
+.choice__media { order: 1; flex: none; width: 64px; height: 64px; border-radius: 12px; object-fit: cover; background: var(--info-bg); }
+.choice__media--empty { display: grid; place-items: center; font-size: 1.125rem; font-weight: 700; color: var(--gold-300); }
+.options .choice input:checked + .choice__body .choice__media { box-shadow: 0 0 0 3px var(--gold-400); }
+
+/* Ações: fixas no rodapé no celular, ao alcance do polegar e acima da barra de gestos. */
+.vote-actions {
+  position: sticky; bottom: 0; z-index: 5; display: flex; gap: var(--s-3);
+  margin: auto calc(var(--s-4) * -1) 0;
+  padding: var(--s-3) var(--s-4) calc(var(--s-3) + env(safe-area-inset-bottom));
+  background: var(--bar-surface); border-top: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+.vote-actions .btn { min-height: 52px; min-width: 0; padding: 0 var(--s-4); }
+@media (max-width: 379px) {
+  /* Celulares estreitos: "Voltar" vira só a seta para o botão principal caber inteiro. */
+  .vote-back { width: 52px; padding: 0 !important; }
+  .vote-back span { display: none; }
+}
+.vote-actions .btn:first-child { flex: 0 0 auto; }
+.vote-actions .btn:last-child { flex: 1; }
+@media (min-width: 600px) {
+  .vote-actions { position: static; margin: var(--s-2) 0 0; padding: 0; border-top: 0; background: none; backdrop-filter: none; justify-content: space-between; }
+  .vote-actions .btn:last-child { flex: 0 1 280px; }
+}
+
+/* ---------- Revisão: a cédula preenchida ---------- */
+.review { list-style: none; padding: 0; margin: 0; border: 1px solid var(--line); border-top: 3px solid var(--gold-400); border-radius: var(--radius); background: var(--surface); counter-reset: ballot; }
+@media (min-width: 600px) { .review { background: var(--surface-raised); } }
+.review__item { counter-increment: ballot; display: flex; align-items: center; gap: var(--s-3); padding: 10px var(--s-2) 10px var(--s-3); min-height: 62px; }
+.review__item::before {
+  content: counter(ballot); flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+  font-size: var(--fs-xs); font-weight: 700; color: var(--gold-300); background: rgba(233, 185, 73, .13);
+}
+.review__item + .review__item { border-top: 1px solid var(--line); }
+.review__text { flex: 1; min-width: 0; }
+.review__media { flex: none; width: 44px; height: 44px; border-radius: 10px; object-fit: cover; }
+.review__category { font-size: var(--fs-xs); color: var(--muted); }
+.review__choice { font-weight: 650; color: var(--ink); font-size: var(--fs-md); line-height: 1.3; overflow-wrap: anywhere; }
+.review__choice.is-blank { color: var(--muted); font-style: italic; font-weight: 500; }
+.review__edit { min-height: 44px; flex: none; }
+@media (max-width: 439px) { .review__edit span { display: none; } .review__edit { width: 44px; padding: 0; } }
+
+.input--code { font-family: var(--font-mono); font-size: 1.5rem; letter-spacing: .15em; text-align: center; text-transform: uppercase; }
+
+/* ---------- Voto registrado ---------- */
+.empty-state__icon--done {
+  width: 104px; height: 104px; background: var(--gold-gradient); color: var(--navy-950);
+  box-shadow: 0 0 0 7px rgba(233, 185, 73, .14), 0 0 0 16px rgba(233, 185, 73, .07), 0 22px 44px -16px rgba(233, 185, 73, .75);
+  animation: done-pop .55s var(--ease) both; margin-bottom: var(--s-5);
+}
+.empty-state__icon--done svg { width: 52px; height: 52px; stroke-width: 2.4; }
+@keyframes done-pop { from { opacity: 0; transform: scale(.5); } 60% { transform: scale(1.06); } to { opacity: 1; transform: none; } }
+
+.vote-footer { max-width: 720px; width: 100%; margin: 0 auto; padding: var(--s-4) var(--s-4) var(--s-6); text-align: center; font-size: var(--fs-xs); color: var(--muted); }
+/* Durante as etapas no celular, o rodapé informativo sai de cena (a barra de ações fica no fundo). */
+@media (max-width: 599px) { .vote-page:has(.vote-card--step) .vote-footer { display: none; } }

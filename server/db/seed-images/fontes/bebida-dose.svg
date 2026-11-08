@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640">
+  <!-- Dose: dois copinhos de dose brindando em clima de festa (confete) -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3B2A7A"/>
+      <stop offset="1" stop-color="#1A1440"/>
+    </linearGradient>
+    <linearGradient id="liquor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE3A3"/>
+      <stop offset="1" stop-color="#EBA83A"/>
+    </linearGradient>
+    <!-- Copinho de dose: boca larga, baixo, fundo de vidro grosso -->
+    <g id="shot">
+      <path d="M0 0 h150 l-16 196 a14 14 0 0 1 -14 13 h-90 a14 14 0 0 1 -14 -13 z" fill="#fff" opacity="0.28"/>
+      <path d="M13 44 h124 l-11 108 h-102 z" fill="url(#liquor)"/>
+      <path d="M24 152 h102 l-4 44 a8 8 0 0 1 -8 7 h-78 a8 8 0 0 1 -8 -7 z" fill="#fff" opacity="0.38"/>
+      <path d="M18 14 l12 128" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
+      <path d="M13 44 h124" stroke="#fff" stroke-width="4" opacity="0.6"/>
+    </g>
+  </defs>
+  <rect width="640" height="640" rx="96" fill="url(#bg)"/>
+
+  <!-- Confete -->
+  <g>
+    <rect x="96" y="104" width="22" height="10" rx="3" fill="#FFD23F" transform="rotate(25 107 109)"/>
+    <rect x="510" y="90" width="22" height="10" rx="3" fill="#F25C54" transform="rotate(-30 521 95)"/>
+    <rect x="540" y="300" width="22" height="10" rx="3" fill="#4CC9F0" transform="rotate(50 551 305)"/>
+    <rect x="80" y="330" width="22" height="10" rx="3" fill="#7BE07B" transform="rotate(-40 91 335)"/>
+    <circle cx="200" cy="96" r="8" fill="#4CC9F0"/>
+    <circle cx="440" cy="76" r="7" fill="#7BE07B"/>
+    <circle cx="560" cy="200" r="8" fill="#FFD23F"/>
+    <circle cx="70" cy="220" r="7" fill="#F25C54"/>
+    <circle cx="580" cy="460" r="6" fill="#fff"/>
+    <circle cx="60" cy="480" r="6" fill="#fff"/>
+  </g>
+
+  <!-- Brilho do brinde -->
+  <g stroke="#FFD23F" stroke-width="10" stroke-linecap="round">
+    <path d="M320 196 v-50"/><path d="M272 210 l-28 -38"/><path d="M368 210 l28 -38"/>
+  </g>
+
+  <ellipse cx="320" cy="530" rx="210" ry="22" fill="#000" opacity="0.3"/>
+  <use href="#shot" transform="translate(150 290) rotate(-16 75 105)"/>
+  <use href="#shot" transform="translate(340 290) rotate(16 75 105)"/>
+</svg>

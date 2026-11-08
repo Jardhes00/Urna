@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0A1D33">
+  <title>Votação</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/vote.css">
+  <script type="module" src="/js/vote/main.js"></script>
+</head>
+<body class="vote-page theme-night stage-glow">
+  <a class="skip-link" href="#app">Pular para a votação</a>
+  <header class="app-header">
+    <div class="container app-header__inner">
+      <span class="brand"><span class="brand__mark"><span data-icon="ballot"></span></span>A Urna</span>
+      <span class="secure-tag"><span data-icon="lock"></span>Voto anônimo</span>
+    </div>
+  </header>
+
+  <main class="vote-main container">
+    <div id="app" aria-live="polite">
+      <noscript><p class="vote-card">Ative o JavaScript do navegador para votar.</p></noscript>
+    </div>
+  </main>
+
+  <footer class="vote-footer container">
+    <p>Só os totais ficam guardados. Ninguém fica sabendo em quem você votou.</p>
+  </footer>
+  <script type="module" src="/js/shared/hydrate.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Blueprint do Render (https://render.com): serviço web Docker + disco persistente.
+# O disco é necessário: sem ele, o banco SQLite é apagado a cada deploy/reinício.
+services:
+  - type: web
+    name: urna-online
+    runtime: docker
+    plan: starter            # discos persistentes exigem plano pago
+    healthCheckPath: /api/health
+    disk:
+      name: urna-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: ADMIN_PASSWORD
+        sync: false          # informe no painel do Render
+      - key: PUBLIC_BASE_URL
+        sync: false

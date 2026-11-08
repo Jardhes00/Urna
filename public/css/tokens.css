@@ -1,0 +1,160 @@
+/* Design tokens. Marca (azul-noite e dourado) espelhada em server/exporters/theme.js. */
+
+/* Fontes hospedadas no próprio servidor: nenhuma requisição a terceiros (licenças em /fonts). */
+@font-face {
+  font-family: "Fraunces"; src: url("/fonts/fraunces.woff2") format("woff2");
+  font-weight: 100 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Figtree"; src: url("/fonts/figtree.woff2") format("woff2");
+  font-weight: 300 900; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* Marca */
+  --navy-950: #0A1D33;
+  --navy-900: #0F2A47;
+  --navy-800: #183A62;
+  --navy-700: #1E4170;
+  --navy-100: #DCE6F2;
+  --navy-50: #EEF3F9;
+  --gold-600: #A87A12;
+  --gold-500: #C8961E;
+  --gold-400: #E9B949;
+  --gold-300: #F4D484;
+  --gold-50: #FBF3DF;
+  --gold-gradient: linear-gradient(180deg, #F4D484 0%, #E9B949 55%, #D6A02E 100%);
+
+  /* Neutros (tema claro: painel de trabalho, sobre papel levemente quente) */
+  --ink: #14202F;
+  --text: #2C3849;
+  --muted: #5C6675;
+  --line: #E6E2D9;
+  --line-strong: #CFCBC0;
+  --canvas: #F6F4EE;
+  --surface: #FFFFFF;
+  --surface-raised: #FFFFFF;
+
+  /* Papéis */
+  --accent-text: #86610E;
+  --link: var(--navy-700);
+  --primary-bg: var(--navy-900);
+  --primary-hover: var(--navy-700);
+  --primary-fg: #FFFFFF;
+  --secondary-hover: #F2EFE8;
+  --hover-bg: #F2EFE8;
+  --selected-bg: var(--navy-50);
+  --selected-border: var(--navy-900);
+  --selected-mark: var(--navy-900);
+  --selected-fg: #FFFFFF;
+  --track: #ECE8DF;
+  --bar: var(--navy-700);
+  --winner-bg: var(--gold-50);
+  --bar-surface: rgba(255, 255, 255, .96);
+  --chip-bg: #F2EFE8;
+
+  /* Semânticas */
+  --success: #16794A;
+  --success-bg: #E8F5EE;
+  --success-line: #B7DEC8;
+  --danger: #B42318;
+  --danger-solid: #B42318;
+  --danger-solid-hover: #8F1B12;
+  --danger-bg: #FDECEA;
+  --danger-line: #F2C1BC;
+  --warning: #805400;
+  --warning-bg: #FFF5DB;
+  --warning-line: #F0D58C;
+  --info: var(--navy-800);
+  --info-bg: var(--navy-50);
+  --info-line: var(--navy-100);
+  --focus: #1D5FD1;
+  --focus-ring: rgba(29, 95, 209, .22);
+
+  /* Tipografia */
+  --font: "Figtree", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, monospace;
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: clamp(1.875rem, 1.3rem + 2.2vw, 2.625rem);
+
+  /* Espaçamento (escala de 4px) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 2px rgba(20, 32, 47, .05);
+  --shadow: 0 1px 2px rgba(20, 32, 47, .05), 0 12px 28px -16px rgba(20, 32, 47, .22);
+  --shadow-lg: 0 28px 56px -20px rgba(10, 29, 51, .45);
+
+  --tap: 48px; /* área mínima de toque */
+  --container: 1160px;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+/*
+ * Tema "noite de premiação": cédula, login, apresentação e faixas escuras.
+ * Basta a classe num elemento para todos os componentes dentro dele se adaptarem.
+ */
+.theme-night {
+  color-scheme: dark;
+
+  --ink: #FBF7EE;
+  --text: #E7E8EA;
+  --muted: #AEB9C8;
+  --line: rgba(255, 255, 255, .13);
+  --line-strong: rgba(255, 255, 255, .28);
+  --canvas: var(--navy-950);
+  --surface: #122C4A;
+  --surface-raised: #17365A;
+
+  --accent-text: var(--gold-300);
+  --link: var(--gold-300);
+  --primary-bg: var(--gold-gradient);
+  --primary-hover: linear-gradient(180deg, #F8DE9B 0%, #EFC562 55%, #DDAC3C 100%);
+  --primary-fg: var(--navy-950);
+  --secondary-hover: rgba(255, 255, 255, .08);
+  --hover-bg: rgba(255, 255, 255, .08);
+  --selected-bg: rgba(233, 185, 73, .14);
+  --selected-border: var(--gold-400);
+  --selected-mark: var(--gold-400);
+  --selected-fg: var(--navy-950);
+  --track: rgba(255, 255, 255, .14);
+  --bar: #7FA3CF;
+  --winner-bg: rgba(233, 185, 73, .13);
+  --bar-surface: rgba(10, 29, 51, .94);
+  --chip-bg: rgba(255, 255, 255, .1);
+
+  --success: #7BDCAB;
+  --success-bg: rgba(123, 220, 171, .13);
+  --success-line: rgba(123, 220, 171, .35);
+  --danger: #FFA69C;
+  --danger-bg: rgba(255, 166, 156, .13);
+  --danger-line: rgba(255, 166, 156, .38);
+  --warning: #F4D484;
+  --warning-bg: rgba(244, 212, 132, .12);
+  --warning-line: rgba(244, 212, 132, .35);
+  --info: #CFE0F5;
+  --info-bg: rgba(255, 255, 255, .07);
+  --info-line: rgba(255, 255, 255, .14);
+  --focus: var(--gold-300);
+  --focus-ring: rgba(244, 212, 132, .3);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .25);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .25), 0 18px 36px -20px rgba(0, 0, 0, .6);
+
+  color: var(--text);
+}

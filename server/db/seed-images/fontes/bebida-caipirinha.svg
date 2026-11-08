@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640">
+  <!-- Caipirinha: copo baixo com gelo, limão e canudo -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E9E4F"/>
+      <stop offset="1" stop-color="#1B6E35"/>
+    </linearGradient>
+    <linearGradient id="drink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E9F7C9"/>
+      <stop offset="1" stop-color="#C9E88F"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="640" rx="96" fill="url(#bg)"/>
+  <circle cx="140" cy="140" r="170" fill="#fff" opacity="0.06"/>
+  <ellipse cx="320" cy="548" rx="210" ry="24" fill="#000" opacity="0.2"/>
+
+  <!-- Canudo -->
+  <path d="M372 300 L470 92 l26 12 -98 212 z" fill="#FFD23F"/>
+  <path d="M470 92 l26 12 -14 30 -26 -12 z" fill="#F25C54"/>
+
+  <!-- Copo -->
+  <path d="M150 230 h340 l-26 296 a26 26 0 0 1 -26 24 h-236 a26 26 0 0 1 -26 -24 z" fill="#fff" opacity="0.3"/>
+  <path d="M168 290 h304 l-21 232 a18 18 0 0 1 -18 16 h-226 a18 18 0 0 1 -18 -16 z" fill="url(#drink)"/>
+
+  <!-- Gelo -->
+  <g fill="#fff" opacity="0.85" stroke="#B8E0F0" stroke-width="4">
+    <rect x="198" y="268" width="78" height="72" rx="12" transform="rotate(-10 237 304)"/>
+    <rect x="300" y="282" width="80" height="74" rx="12" transform="rotate(8 340 319)"/>
+    <rect x="248" y="372" width="74" height="70" rx="12" transform="rotate(-4 285 407)"/>
+    <rect x="356" y="400" width="66" height="64" rx="12" transform="rotate(12 389 432)"/>
+  </g>
+
+  <!-- Limão em gomos -->
+  <g transform="translate(212 452) rotate(-18)">
+    <path d="M0 0 a62 62 0 0 1 124 0 z" fill="#3FA34D"/>
+    <path d="M10 0 a52 52 0 0 1 104 0 z" fill="#B5E06B"/>
+    <path d="M62 0 v-48 M62 0 l-34 -34 M62 0 l34 -34" stroke="#E9F7C9" stroke-width="5"/>
+  </g>
+  <g transform="translate(420 236) rotate(30)">
+    <circle r="70" fill="#3FA34D"/>
+    <circle r="58" fill="#B5E06B"/>
+    <g stroke="#E9F7C9" stroke-width="5">
+      <path d="M0 -58 V58 M-58 0 H58 M-41 -41 L41 41 M41 -41 L-41 41"/>
+    </g>
+    <circle r="10" fill="#E9F7C9"/>
+  </g>
+
+  <path d="M188 300 l18 210" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity="0.45"/>
+</svg>

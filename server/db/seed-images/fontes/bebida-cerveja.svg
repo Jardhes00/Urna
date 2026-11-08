@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640">
+  <!-- Cerveja: garrafa âmbar + copo com espuma (ilustração genérica, sem marca) -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D0202E"/>
+      <stop offset="1" stop-color="#9E1420"/>
+    </linearGradient>
+    <linearGradient id="beer" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F2A516"/>
+      <stop offset="0.55" stop-color="#FFC93C"/>
+      <stop offset="1" stop-color="#E8930C"/>
+    </linearGradient>
+    <linearGradient id="bottle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5A2A0C"/>
+      <stop offset="0.45" stop-color="#8A4513"/>
+      <stop offset="1" stop-color="#4A2008"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="640" rx="96" fill="url(#bg)"/>
+  <circle cx="470" cy="150" r="190" fill="#fff" opacity="0.06"/>
+  <ellipse cx="330" cy="560" rx="230" ry="26" fill="#000" opacity="0.18"/>
+
+  <!-- Garrafa -->
+  <g transform="translate(140 110)">
+    <rect x="52" y="0" width="56" height="22" rx="6" fill="#E9B949"/>
+    <path d="M58 22 h44 v70 c0 34 46 52 46 104 v234 a20 20 0 0 1 -20 20 h-96 a20 20 0 0 1 -20 -20 v-234 c0 -52 46 -70 46 -104 z" fill="url(#bottle)"/>
+    <rect x="22" y="250" width="116" height="110" rx="10" fill="#F4E6C8"/>
+    <rect x="22" y="268" width="116" height="10" fill="#D0202E"/>
+    <rect x="22" y="332" width="116" height="10" fill="#D0202E"/>
+    <path d="M44 300 h72" stroke="#9E1420" stroke-width="10" stroke-linecap="round"/>
+    <path d="M72 110 c-10 20 -26 34 -26 70 v240" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity="0.22" fill="none"/>
+  </g>
+
+  <!-- Copo -->
+  <g transform="translate(318 210)">
+    <path d="M0 40 h170 l-18 300 a20 20 0 0 1 -20 18 h-94 a20 20 0 0 1 -20 -18 z" fill="#fff" opacity="0.28"/>
+    <path d="M12 92 h146 l-15 246 a14 14 0 0 1 -14 13 h-88 a14 14 0 0 1 -14 -13 z" fill="url(#beer)"/>
+    <g fill="#fff" opacity="0.7">
+      <circle cx="56" cy="290" r="5"/><circle cx="74" cy="236" r="4"/><circle cx="102" cy="300" r="6"/>
+      <circle cx="120" cy="196" r="4"/><circle cx="60" cy="168" r="5"/><circle cx="96" cy="140" r="3.5"/>
+    </g>
+    <path d="M-8 64 c0 -40 40 -56 64 -40 c16 -30 62 -30 76 0 c26 -14 58 4 54 40 c10 6 10 30 -6 34 h-180 c-16 -4 -16 -28 -8 -34 z" fill="#FFF8E7"/>
+    <path d="M30 330 l-14 -250" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
+  </g>
+</svg>

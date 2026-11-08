@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640">
+  <!-- Brasil x Marrocos: bandeiras lado a lado e bola de futebol ao centro -->
+  <defs>
+    <clipPath id="card"><rect width="640" height="640" rx="96"/></clipPath>
+  </defs>
+  <g clip-path="url(#card)">
+    <!-- Brasil (metade esquerda) -->
+    <rect width="320" height="640" fill="#009C3B"/>
+    <path d="M160 150 L300 320 L160 490 L20 320 Z" fill="#FFDF00"/>
+    <circle cx="160" cy="320" r="84" fill="#002776"/>
+    <path d="M78 300 q82 -30 164 16" stroke="#fff" stroke-width="14" fill="none"/>
+    <g fill="#fff">
+      <circle cx="130" cy="352" r="5"/><circle cx="160" cy="370" r="6"/><circle cx="192" cy="350" r="5"/>
+      <circle cx="146" cy="384" r="4"/><circle cx="178" cy="388" r="4"/>
+    </g>
+
+    <!-- Marrocos (metade direita) -->
+    <rect x="320" width="320" height="640" fill="#C1272D"/>
+    <!-- Pentagrama entrelaçado (as linhas cruzam por dentro, como na bandeira) -->
+    <path d="M480 235 L544.7 434 L375.4 311 L584.6 311 L415.3 434 Z"
+          fill="none" stroke="#006233" stroke-width="16" stroke-linejoin="miter"/>
+
+    <rect x="312" width="16" height="640" fill="#fff"/>
+  </g>
+
+  <!-- Bola -->
+  <g transform="translate(320 548)">
+    <circle r="74" fill="#000" opacity="0.25" cy="8"/>
+    <circle r="70" fill="#fff" stroke="#1C1C1C" stroke-width="5"/>
+    <path d="M0 -24 L23 -7 L14 20 L-14 20 L-23 -7 Z" fill="#1C1C1C"/>
+    <g stroke="#1C1C1C" stroke-width="5" fill="none">
+      <path d="M0 -24 V-62"/><path d="M23 -7 L60 -20"/><path d="M14 20 L36 54"/><path d="M-14 20 L-36 54"/><path d="M-23 -7 L-60 -20"/>
+    </g>
+    <path d="M-16 -66 L0 -62 L16 -66 L12 -69 A70 70 0 0 0 -12 -69 Z" fill="#1C1C1C"/>
+    <path d="M58 -36 L60 -20 L68 -8 A70 70 0 0 0 62 -34 Z" fill="#1C1C1C"/>
+    <path d="M-58 -36 L-60 -20 L-68 -8 A70 70 0 0 1 -62 -34 Z" fill="#1C1C1C"/>
+    <path d="M24 66 L36 54 L50 50 A70 70 0 0 1 28 64 Z" fill="#1C1C1C"/>
+    <path d="M-24 66 L-36 54 L-50 50 A70 70 0 0 0 -28 64 Z" fill="#1C1C1C"/>
+  </g>
+
+  <!-- X -->
+  <g transform="translate(320 92)">
+    <circle r="44" fill="#fff"/>
+    <path d="M-16 -16 L16 16 M16 -16 L-16 16" stroke="#0F2A47" stroke-width="12" stroke-linecap="round"/>
+  </g>
+</svg>

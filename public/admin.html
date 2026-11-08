@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0A1D33">
+  <title>Painel · A Urna</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/present.css">
+  <script type="module" src="/js/admin/main.js"></script>
+</head>
+<body class="admin-page">
+  <a class="skip-link" href="#view">Pular para o conteúdo</a>
+  <header class="app-header" id="admin-header">
+    <div class="container app-header__inner">
+      <a class="brand" href="#/"><span class="brand__mark"><span data-icon="ballot"></span></span>A Urna <span class="brand__tag">Painel</span></a>
+      <nav class="admin-nav" id="admin-nav" aria-label="Principal" hidden>
+        <a class="btn btn--on-dark btn--sm" href="#/" aria-label="Votações"><span data-icon="ballot"></span><span>Votações</span></a>
+        <button class="btn btn--on-dark btn--sm" type="button" id="logout-btn" aria-label="Sair do painel"><span data-icon="logout"></span><span>Sair</span></button>
+      </nav>
+    </div>
+  </header>
+  <main id="view" class="admin-main" tabindex="-1"></main>
+  <script type="module" src="/js/shared/hydrate.js"></script>
+</body>
+</html>
